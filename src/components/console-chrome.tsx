@@ -20,7 +20,7 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
               A2
             </span>
             <span className="font-mono text-[13px] tracking-tight text-foreground">
-              kalakriti<span className="text-muted-foreground">/agentic-commerce</span>
+              mandate<span className="text-muted-foreground">/agentic-commerce</span>
             </span>
           </Link>
           <nav className="ml-auto flex items-center gap-1">
@@ -45,8 +45,8 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
       {children}
       <footer className="mt-20 border-t border-border">
         <div className="mx-auto max-w-7xl px-5 py-8 font-mono text-[11px] text-muted-foreground">
-          No real money moves. Every amount is INR minor units (paise) in the audit detail. Track 01 — AI Growth &amp;
-          Agentic Commerce.
+          No real money moves. Every amount is INR minor units (paise) in the audit detail. Track 01
+          — AI Growth &amp; Agentic Commerce.
         </div>
       </footer>
     </div>
@@ -61,7 +61,12 @@ export function VerdictChip({ verdict }: { verdict: string }) {
         ? "border-deny/40 bg-deny/10 text-deny"
         : "border-escalate/40 bg-escalate/10 text-escalate";
   return (
-    <span className={cn("rounded-sm border px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider", tone)}>
+    <span
+      className={cn(
+        "rounded-sm border px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider",
+        tone,
+      )}
+    >
       {verdict}
     </span>
   );
@@ -69,13 +74,21 @@ export function VerdictChip({ verdict }: { verdict: string }) {
 
 export function StatusChip({ status }: { status: string }) {
   const tone =
-    status === "completed" || status === "settled" || status === "paid" || status === "awaiting_payment"
+    status === "completed" ||
+    status === "settled" ||
+    status === "paid" ||
+    status === "awaiting_payment"
       ? "border-allow/40 bg-allow/10 text-allow"
       : status === "failed" || status === "blocked"
         ? "border-deny/40 bg-deny/10 text-deny"
         : "border-border bg-muted text-muted-foreground";
   return (
-    <span className={cn("rounded-sm border px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider", tone)}>
+    <span
+      className={cn(
+        "rounded-sm border px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider",
+        tone,
+      )}
+    >
       {status.replace(/_/g, " ")}
     </span>
   );
@@ -83,6 +96,8 @@ export function StatusChip({ status }: { status: string }) {
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{children}</div>
+    <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+      {children}
+    </div>
   );
 }
